@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        I am learning javascript
+    </title>
+
+    <style>
+        .button {
+            background-color: blueviolet;
+            text-align: center;
+            color: white;
+            font-size: 25px;
+        }
+    </style>
+
+    <script>
+        function headScriptFunction() {
+            document.getElementById("headScript").innerHTML = "bak ben head içinden geliyorum";
+        }
+    </script>
+</head>
+
+
+<body>
+
+    <h2>Javascript öğreniyorum</h2>
+
+    <button class="button" type="button" onclick="document.getElementById('bass').innerHTML = Date()">Press me</button>
+    <p id="bass">Here !</p>
+
+    <hr>
+
+    <button type="button" onclick="document.getElementById('demo').innerHTML = 'Kardeşim o seni sevmiyor'">Ya sonra
+        ?</button>
+    <button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">büyüt</button>
+    <p id="demo">ya kardeşim benim :)</p>
+
+    <hr>
+
+    <h2>lightbulb example</h2>
+    <button type="button" onclick="document.getElementById('img').src='pic_bulbon.gif'">Turn On</button>
+    <img id="img" src="pic_bulboff.gif" style="width: 100px;">
+    <button type="button" onclick="document.getElementById('img').src = 'pic_bulboff.gif'">Turn Off</button>
+
+    <hr>
+
+    <h2>body içinde script</h2>
+    <p id="bodyScript"></p>
+    <script>
+        document.getElementById('bodyScript').innerHTML = "Ahhh Ahh";
+    </script>
+
+
+    <hr>
+    <h2>Head içinde script</h2>
+    <p id="headScript"> Burası değişsin kardeşim</p>
+    <button type="button" onclick="headScriptFunction()">Try it !</button>
+
+    <hr>
+
+    <h2 id="fileS"> Başka dosyadan script </h2>
+    <button type="button" onclick="fileScript()">bu buton başka buton</button>
+
+    <hr>
+
+    <h2>window.print() örneği </h2>
+    <button type="button" onclick="window.print()">Print this page</button>
+    <button type="button" onclick="window.alert('sen ona aşıkın')">basss</button>
+    <script src="myScript.js"></script>
+
+    <hr>
+
+    <h2>bir şeyler var içeri bak</h2>
+    <p id="multiple"></p>
+    <script>
+        let a, b, c;
+        a = 5;
+        b = 6;
+        c = a + b;
+        document.getElementById("multiple").innerHTML = c;
+    </script>
+
+    <hr>
+
+    <p>A <b>Javascript program</b></p>
+    <p id="heyo"></p>
+    <script>
+        // we are not using var.
+        /*bu da bir comment*/
+        let x, y, z;
+        x = 5;
+        y = 6;
+        z = x + y;
+        document.getElementById("heyo").innerHTML = "The value of z is" + z + ".";
+    </script>
+
+    <hr>
+
+    <h2>JavaScript Hoisting</h2>
+    <p>With <b>let</b>, you cannot use a variable before it is declared.</p>
+    <p id="hata"></p>
+
+    <script>
+        try {
+            carName = "Saab";
+            let carName = "Volvo";
+        } catch (err) {
+            document.getElementById("hata").innerHTML = err;
+        }
+    </script>
+
+    <br>
+    <hr>
+
+
+    <h2>JavaScript Arithmetic</h2>
+    <h3>Math.pow()</h3>
+
+    <p id="pow"></p>
+
+    <script>
+        let power = 5;
+        document.getElementById("pow").innerHTML = Math.pow(power, 2);
+    </script>
+
+    <hr>
+
+    <p>Template literals allows variables in strings:</p>
+
+    <p id="marvin"></p>
+
+    <script>
+        let header = "Sayın boran toktay";
+        let tags = ["Billy Joel", "Pink", "es6"];
+
+        let html = `<h2>${header}</h2><ul>`;
+
+        for (const x of tags) {
+            html += `<li>${x}</li>`;
+        }
+
+        html += `</ul>`;
+        document.getElementById("marvin").innerHTML = html;
+    </script>
+
+    <hr>
+    <p>Array.forEach() calls a function for each array element.</p>
+
+    <p id="demo"></p>
+
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+        let text = "<ul>";
+        fruits.forEach(myFunction);
+        text += "</ul>";
+        document.getElementById("demo").innerHTML = text;
+
+        function myFunction(value) {
+            text += "<li>" + value + "</li>";
+        }
+    </script>
+
+    <hr>
+    <p id="date"></p>
+
+    <script>
+        let day;
+        switch (new Date().getDay()) {
+            case 0:
+                day = "Sunday";
+                break;
+            case 1:
+                day = "Monday";
+                break;
+            case 2:
+                day = "Tuesday";
+                break;
+            case 3:
+                day = "Wednesday";
+                break;
+            case 4:
+                day = "Thursday";
+                break;
+            case 5:
+                day = "Friday";
+                break;
+            case 6:
+                day = "Saturday";
+        }
+        document.getElementById("date").innerHTML = "Today is " + day;
+    </script>
+
+</body>
+
+</html>
